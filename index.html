@@ -9,174 +9,947 @@
 </head>
 <body>
 
-    <nav class="navbar">
+    <!-- Main Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="logo">Quick<span>Bite</span></div>
         <div class="nav-links">
-            <a href="#">Offers</a>
-            <a href="#">Help</a>
-            <a href="#">Sign In</a>
-            <div class="cart-icon">
+            <a href="#" class="nav-offers"><i class="ph ph-tag"></i> Offers</a>
+            <a href="#" class="nav-help"><i class="ph ph-question"></i> Help</a>
+            <a href="#" class="nav-account" id="account-btn"><i class="ph ph-user"></i> <span id="account-text">Sign In</span></a>
+            <div class="cart-icon" id="cart-icon-btn">
                 <i class="ph ph-shopping-cart"></i>
-                <span class="badge">3</span>
+                <span class="badge" id="cart-badge">0</span>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <h1>Feast at your fingertips.</h1>
-        <p>Order from your favorite local restaurants.</p>
-        <div class="search-container">
-            <input type="text" placeholder="Enter your delivery address...">
-            <button>Find Food</button>
-        </div>
-    </header>
-
-    <section class="container">
-        <h2 class="section-title">Popular Near You</h2>
-        <div class="restaurant-grid">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80');"></div>
-                <div class="card-content">
-                    <h3>Pizza Heaven</h3>
-                    <p class="cuisine">Italian • Pizza • $$</p>
-                    <div class="card-footer">
-                        <span class="rating"><i class="ph ph-star-fill"></i> 4.8</span>
-                        <span class="time">20-30 min</span>
-                    </div>
+    <!-- Main Page -->
+    <div id="main-page" class="page-view active">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Feast at your fingertips.</h1>
+                <p>Order from your favorite local restaurants in seconds.</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Enter your delivery address..." id="search-input">
+                    <button id="search-btn">Find Food</button>
                 </div>
             </div>
+        </header>
 
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80');"></div>
-                <div class="card-content">
-                    <h3>Green Bowl</h3>
-                    <p class="cuisine">Healthy • Salads • $</p>
-                    <div class="card-footer">
-                        <span class="rating"><i class="ph ph-star-fill"></i> 4.5</span>
-                        <span class="time">15-25 min</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=500&q=80');"></div>
-                <div class="card-content">
-                    <h3>Burger Kingo</h3>
-                    <p class="cuisine">American • Burgers • $$</p>
-                    <div class="card-footer">
-                        <span class="rating"><i class="ph ph-star-fill"></i> 4.2</span>
-                        <span class="time">30-45 min</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <h2>Why Choose QuickBite?</h2>
-        <div class="features-grid">
-            <div class="feature" data-animate="fade-in">
+        <!-- Quick Stats -->
+        <section class="quick-stats">
+            <div class="stat">
                 <i class="ph ph-lightning"></i>
-                <h4>Lightning Fast Delivery</h4>
-                <p>Get your food delivered hot and fresh in under 30 minutes.</p>
+                <h4>Under 30 min</h4>
+                <p>Fast delivery</p>
             </div>
-            <div class="feature" data-animate="fade-in">
+            <div class="stat">
                 <i class="ph ph-storefront"></i>
-                <h4>Top Local Restaurants</h4>
-                <p>Choose from a variety of top-rated restaurants and cuisines.</p>
+                <h4>500+</h4>
+                <p>Restaurants</p>
             </div>
-            <div class="feature" data-animate="fade-in">
-                <i class="ph ph-credit-card"></i>
-                <h4>Secure Payments</h4>
-                <p>Pay easily and securely with multiple payment options.</p>
+            <div class="stat">
+                <i class="ph ph-shield-check"></i>
+                <h4>100%</h4>
+                <p>Safe & Secure</p>
             </div>
-            <div class="feature" data-animate="fade-in">
+            <div class="stat">
                 <i class="ph ph-star"></i>
-                <h4>Trusted Reviews</h4>
-                <p>Read real reviews and ratings from our happy customers.</p>
+                <h4>4.9/5</h4>
+                <p>User Rating</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial" data-animate="slide-in-left">
-                <p>"QuickBite is my go-to for fast, tasty meals!"</p>
-                <span>- Alex</span>
-            </div>
-            <div class="testimonial" data-animate="slide-in-up">
-                <p>"Great variety and always on time. Love the app!"</p>
-                <span>- Priya</span>
-            </div>
-            <div class="testimonial" data-animate="slide-in-right">
-                <p>"The best food delivery service in town."</p>
-                <span>- John</span>
-            </div>
-        </div>
-    </section>
+        <!-- Restaurant Grid with 5 Items -->
+        <section class="container">
+            <h2 class="section-title"><i class="ph ph-fire"></i> Popular Near You</h2>
+            <div class="restaurant-grid">
+                <!-- Pizza Heaven -->
+                <div class="card restaurant-card" data-restaurant="pizza-heaven">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge">Popular</div>
+                    <div class="card-content">
+                        <h3>Pizza Heaven</h3>
+                        <p class="cuisine"><i class="ph ph-fork-knife"></i> Italian • Pizza</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.8</span>
+                            <span class="time"><i class="ph ph-clock"></i> 20-30 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('pizza-heaven')">View Menu</button>
+                    </div>
+                </div>
 
-    <!-- App Download Section -->
-    <section class="app-download">
-        <h2>Get the App</h2>
-        <p>Order food on the go with our mobile app!</p>
-        <div class="app-buttons">
-            <a href="#" class="app-btn playstore"><i class="ph ph-google-play-logo"></i> Google Play</a>
-            <a href="#" class="app-btn appstore"><i class="ph ph-apple-logo"></i> App Store</a>
-        </div>
-    </section>
+                <!-- Green Bowl -->
+                <div class="card restaurant-card" data-restaurant="green-bowl">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge healthy">Healthy</div>
+                    <div class="card-content">
+                        <h3>Green Bowl</h3>
+                        <p class="cuisine"><i class="ph ph-leaf"></i> Healthy • Salads</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.5</span>
+                            <span class="time"><i class="ph ph-clock"></i> 15-25 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('green-bowl')">View Menu</button>
+                    </div>
+                </div>
 
-    <!-- Sign In Modal -->
-    <div id="signin-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="close-signin">&times;</span>
-        <h2>Sign In to QuickBite</h2>
-        <form class="signin-form">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required>
-          <button type="submit">Sign In</button>
-        </form>
-        <div class="signin-extra">
-          <a href="#">Forgot password?</a>
-          <span> | </span>
-          <a href="#">Create an account</a>
-        </div>
-      </div>
+                <!-- Burger Kingo -->
+                <div class="card restaurant-card" data-restaurant="burger-kingo">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge burger">New</div>
+                    <div class="card-content">
+                        <h3>Burger Kingo</h3>
+                        <p class="cuisine"><i class="ph ph-fire"></i> American • Burgers</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.2</span>
+                            <span class="time"><i class="ph ph-clock"></i> 30-45 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('burger-kingo')">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Spice Curry House (NEW) -->
+                <div class="card restaurant-card" data-restaurant="spice-curry">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a19fb6930b?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge trending">Trending</div>
+                    <div class="card-content">
+                        <h3>Spice Curry House</h3>
+                        <p class="cuisine"><i class="ph ph-fire"></i> Indian • Curry • Biryani</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.7</span>
+                            <span class="time"><i class="ph ph-clock"></i> 25-35 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('spice-curry')">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Sushi Dreams (NEW) -->
+                <div class="card restaurant-card" data-restaurant="sushi-dreams">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1564489551878-2f400e90a340?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge premium">Premium</div>
+                    <div class="card-content">
+                        <h3>Sushi Dreams</h3>
+                        <p class="cuisine"><i class="ph ph-fish"></i> Japanese • Sushi • Ramen</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.9</span>
+                            <span class="time"><i class="ph ph-clock"></i> 35-40 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('sushi-dreams')">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Taco Fiesta (NEW - INNOVATIVE) -->
+                <div class="card restaurant-card" data-restaurant="taco-fiesta">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge fusion">Fusion</div>
+                    <div class="card-content">
+                        <h3>Taco Fiesta</h3>
+                        <p class="cuisine"><i class="ph ph-flame"></i> Mexican • Street Food • Tacos</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.6</span>
+                            <span class="time"><i class="ph ph-clock"></i> 15-20 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('taco-fiesta')">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Grilled Perfection (NEW - INNOVATIVE) -->
+                <div class="card restaurant-card" data-restaurant="grilled-perfection">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-badge ultimate">Ultimate</div>
+                    <div class="card-content">
+                        <h3>Grilled Perfection</h3>
+                        <p class="cuisine"><i class="ph ph-flame"></i> BBQ • Steaks • Grilled</p>
+                        <div class="card-footer">
+                            <span class="rating"><i class="ph ph-star-fill"></i> 4.8</span>
+                            <span class="time"><i class="ph ph-clock"></i> 25-35 min</span>
+                        </div>
+                        <button class="view-menu-btn" onclick="viewRestaurant('grilled-perfection')">View Menu</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2><i class="ph ph-sparkle"></i> Why Choose QuickBite?</h2>
+            <div class="features-grid">
+                <div class="feature" data-animate="fade-in">
+                    <div class="feature-icon">
+                        <i class="ph ph-lightning"></i>
+                    </div>
+                    <h4>Lightning Fast Delivery</h4>
+                    <p>Get your food delivered hot and fresh in under 30 minutes guaranteed.</p>
+                </div>
+                <div class="feature" data-animate="fade-in">
+                    <div class="feature-icon">
+                        <i class="ph ph-storefront"></i>
+                    </div>
+                    <h4>Top Local Restaurants</h4>
+                    <p>Choose from hundreds of top-rated restaurants and diverse cuisines.</p>
+                </div>
+                <div class="feature" data-animate="fade-in">
+                    <div class="feature-icon">
+                        <i class="ph ph-credit-card"></i>
+                    </div>
+                    <h4>Secure Payments</h4>
+                    <p>Pay easily and securely with multiple payment options and cashback.</p>
+                </div>
+                <div class="feature" data-animate="fade-in">
+                    <div class="feature-icon">
+                        <i class="ph ph-star"></i>
+                    </div>
+                    <h4>Trusted Reviews</h4>
+                    <p>Read real reviews and ratings from thousands of happy customers.</p>
+                </div>
+                <div class="feature" data-animate="fade-in">
+                    <div class="feature-icon">
+                        <i class="ph ph-gift"></i>
+                    </div>
+                    <h4>Amazing Offers</h4>
+                    <p>Get exclusive deals, discounts and loyalty rewards on every order.</p>
+                </div>
+                <div class="feature" data-animate="fade-in">
+                    <div class="feature-icon">
+                        <i class="ph ph-phone"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Our dedicated customer support team is always ready to help you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial" data-animate="slide-in-left">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">AK</div>
+                        <div class="customer-info">
+                            <p class="customer-name">Alex Kumar</p>
+                            <div class="rating-stars">
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"QuickBite is my go-to for fast, tasty meals! The delivery is always on time."</p>
+                </div>
+                <div class="testimonial" data-animate="slide-in-up">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">PJ</div>
+                        <div class="customer-info">
+                            <p class="customer-name">Priya Joshi</p>
+                            <div class="rating-stars">
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Great variety and competitive prices. The app is super easy to use!"</p>
+                </div>
+                <div class="testimonial" data-animate="slide-in-right">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">JD</div>
+                        <div class="customer-info">
+                            <p class="customer-name">John Doe</p>
+                            <div class="rating-stars">
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                                <i class="ph ph-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Best food delivery service in town. Every order is perfect and hot!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Download Section -->
+        <section class="app-download">
+            <h2>Get the QuickBite App</h2>
+            <p>Order food on the go with exclusive app-only deals!</p>
+            <div class="app-buttons">
+                <a href="#" class="app-btn playstore"><i class="ph ph-google-play-logo"></i> Google Play</a>
+                <a href="#" class="app-btn appstore"><i class="ph ph-apple-logo"></i> App Store</a>
+            </div>
+        </section>
     </div>
 
-    <script>
-    // Animate on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-        }
-      });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      observer.observe(el);
-    });
+    <!-- Sign In Page -->
+    <div id="signin-page" class="page-view">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <i class="ph ph-arrow-left" onclick="goBackToHome()" style="cursor: pointer; font-size: 1.5rem;"></i>
+                    <h2>Sign In</h2>
+                </div>
+                <form id="signin-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="signin-email">Email Address</label>
+                        <input type="email" id="signin-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">Password</label>
+                        <input type="password" id="signin-password" placeholder="Enter your password" required>
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        <span>Keep me signed in</span>
+                    </label>
+                    <button type="submit" class="auth-btn">Sign In</button>
+                </form>
+                <div class="auth-links">
+                    <a href="#">Forgot password?</a> • <a href="#">Create account</a>
+                </div>
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <div class="social-buttons">
+                        <button class="social-btn google"><i class="ph ph-google-logo"></i> Google</button>
+                        <button class="social-btn facebook"><i class="ph ph-facebook-logo"></i> Facebook</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    // Sign In Modal logic
-    const signinLink = document.querySelector('.nav-links a[href="#"]:nth-child(3)');
-    const signinModal = document.getElementById('signin-modal');
-    const closeSignin = document.getElementById('close-signin');
-    if(signinLink && signinModal && closeSignin) {
-      signinLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        signinModal.style.display = 'block';
-      });
-      closeSignin.addEventListener('click', () => {
-        signinModal.style.display = 'none';
-      });
-      window.addEventListener('click', (e) => {
-        if (e.target === signinModal) signinModal.style.display = 'none';
-      });
-    }
+    <!-- Profile Page -->
+    <div id="profile-page" class="page-view">
+        <div class="profile-container">
+            <div class="profile-header">
+                <i class="ph ph-arrow-left" onclick="goBackToHome()" style="cursor: pointer; font-size: 1.5rem;"></i>
+                <h2>My Profile</h2>
+            </div>
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <span id="profile-initials">JD</span>
+                </div>
+                <h3 id="profile-name">John Doe</h3>
+                <p id="profile-email">john@example.com</p>
+            </div>
+            <div class="profile-menu">
+                <div class="menu-item"><i class="ph ph-list"></i> <span>My Orders</span></div>
+                <div class="menu-item"><i class="ph ph-map-pin"></i> <span>Saved Addresses</span></div>
+                <div class="menu-item"><i class="ph ph-bookmark"></i> <span>Favorites</span></div>
+                <div class="menu-item"><i class="ph ph-wallet"></i> <span>Wallet & Offers</span></div>
+                <div class="menu-item"><i class="ph ph-chat-dots"></i> <span>Support</span></div>
+                <div class="menu-item" onclick="logout()" style="color: #ff4757;"><i class="ph ph-sign-out"></i> <span>Sign Out</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Page -->
+    <div id="cart-page" class="page-view">
+        <div class="cart-container">
+            <div class="cart-header">
+                <i class="ph ph-arrow-left" onclick="goBackToHome()" style="cursor: pointer; font-size: 1.5rem;"></i>
+                <h2>My Cart</h2>
+            </div>
+            <div id="empty-cart" class="empty-cart">
+                <i class="ph ph-shopping-cart-x"></i>
+                <h3>Your cart is empty</h3>
+                <p>Add delicious items to get started!</p>
+                <button class="browse-btn" onclick="goBackToHome()">Browse Restaurants</button>
+            </div>
+            <div id="cart-items" class="cart-items" style="display: none;"></div>
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <div class="summary-row"><span>Subtotal</span> <span id="subtotal">₹0</span></div>
+                <div class="summary-row"><span>Delivery Fee</span> <span id="delivery-fee">₹50</span></div>
+                <div class="summary-row discount"><span>Discount</span> <span id="discount">₹0</span></div>
+                <div class="summary-row total"><span>Total</span> <span id="total">₹0</span></div>
+                <button class="checkout-btn" onclick="goToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkout-page" class="page-view">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <i class="ph ph-arrow-left" onclick="goToCart()" style="cursor: pointer; font-size: 1.5rem;"></i>
+                <h2>Checkout</h2>
+            </div>
+            <div class="checkout-content">
+                <div class="checkout-section">
+                    <h3><i class="ph ph-map-pin"></i> Delivery Address</h3>
+                    <div class="address-form">
+                        <input type="text" placeholder="Full Name" id="customer-name" required>
+                        <input type="tel" placeholder="Phone Number" id="customer-phone" required>
+                        <input type="text" placeholder="Delivery Address" id="customer-address" required>
+                        <input type="text" placeholder="Apartment/House No." id="customer-apt" required>
+                    </div>
+                </div>
+                <div class="checkout-section">
+                    <h3><i class="ph ph-credit-card"></i> Payment Method</h3>
+                    <div class="payment-options">
+                        <label class="payment-option"><input type="radio" name="payment" value="card" checked> <span><i class="ph ph-credit-card"></i> Credit/Debit Card</span></label>
+                        <label class="payment-option"><input type="radio" name="payment" value="wallet"> <span><i class="ph ph-wallet"></i> Digital Wallet</span></label>
+                        <label class="payment-option"><input type="radio" name="payment" value="cod"> <span><i class="ph ph-money"></i> Cash on Delivery</span></label>
+                    </div>
+                </div>
+                <div class="checkout-section">
+                    <h3><i class="ph ph-tag"></i> Promo Code</h3>
+                    <div class="promo-input">
+                        <input type="text" placeholder="Enter promo code (SAVE20)" id="promo-code">
+                        <button onclick="applyPromo()">Apply</button>
+                    </div>
+                </div>
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="checkout-summary"></div>
+                </div>
+                <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Page -->
+    <div id="success-page" class="page-view">
+        <div class="success-container">
+            <div class="success-icon"><i class="ph ph-check-circle"></i></div>
+            <h2>Order Placed Successfully!</h2>
+            <p id="order-id">Order ID: #12345</p>
+            <div class="success-details">
+                <div class="detail"><i class="ph ph-clock"></i> <span>Delivery in 30-40 mins</span></div>
+                <div class="detail"><i class="ph ph-map-pin"></i> <span>Live tracking available</span></div>
+            </div>
+            <button class="track-btn" onclick="goBackToHome()">Back to Home</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuickBite</h4>
+                <p>Fast, Fresh, Delicious Food Delivery</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Partner With Us</h4>
+                <ul>
+                    <li><a href="#">For Restaurants</a></li>
+                    <li><a href="#">For Delivery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 QuickBite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize App
+        let cart = JSON.parse(localStorage.getItem('quickbite_cart')) || [];
+        let user = JSON.parse(localStorage.getItem('quickbite_user')) || null;
+
+        // Menu Data with unique images for all 35 items
+        const menuData = {
+            'pizza-heaven': [
+                { id: 1, name: 'Margherita Pizza', price: 299, img: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=500&q=80' },
+                { id: 2, name: 'Pepperoni Delight', price: 349, img: 'https://images.unsplash.com/photo-1628840042765-356cda07f4ee?auto=format&fit=crop&w=500&q=80' },
+                { id: 3, name: 'Veggie Supreme', price: 329, img: 'https://images.unsplash.com/photo-1511689915726-cd4628902d4a?auto=format&fit=crop&w=500&q=80' },
+                { id: 4, name: 'BBQ Chicken', price: 399, img: 'https://images.unsplash.com/photo-1595521624817-19ee2172de13?auto=format&fit=crop&w=500&q=80' },
+                { id: 5, name: 'Garlic Bread', price: 149, img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=500&q=80' }
+            ],
+            'green-bowl': [
+                { id: 6, name: 'Greek Salad', price: 249, img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=500&q=80' },
+                { id: 7, name: 'Caesar Salad', price: 279, img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80' },
+                { id: 8, name: 'Protein Bowl', price: 349, img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80' },
+                { id: 9, name: 'Quinoa Mix', price: 299, img: 'https://images.unsplash.com/photo-1543482200-5613a5f33b15?auto=format&fit=crop&w=500&q=80' },
+                { id: 10, name: 'Fresh Juice', price: 99, img: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=500&q=80' }
+            ],
+            'burger-kingo': [
+                { id: 11, name: 'Classic Burger', price: 199, img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80' },
+                { id: 12, name: 'Double Cheese Burger', price: 279, img: 'https://images.unsplash.com/photo-1572802419224-7b1aca3a3a51?auto=format&fit=crop&w=500&q=80' },
+                { id: 13, name: 'Spicy Burger', price: 249, img: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80' },
+                { id: 14, name: 'French Fries', price: 99, img: 'https://images.unsplash.com/photo-1576107232684-fa280b2caa41?auto=format&fit=crop&w=500&q=80' },
+                { id: 15, name: 'Vanilla Shake', price: 129, img: 'https://images.unsplash.com/photo-1579954587223-26d85a2a6ce0?auto=format&fit=crop&w=500&q=80' }
+            ],
+            'spice-curry': [
+                { id: 16, name: 'Chicken Biryani', price: 349, img: 'https://images.unsplash.com/photo-1585938389335-f9b46b1a113f?auto=format&fit=crop&w=500&q=80' },
+                { id: 17, name: 'Paneer Tikka', price: 299, img: 'https://images.unsplash.com/photo-1610057099431-d4af2e626268?auto=format&fit=crop&w=500&q=80' },
+                { id: 18, name: 'Butter Chicken', price: 349, img: 'https://images.unsplash.com/photo-1565557623814-695d40c08b0b?auto=format&fit=crop&w=500&q=80' },
+                { id: 19, name: 'Naan Bread', price: 79, img: 'https://images.unsplash.com/photo-1541332111995-c8fe32dc5c1b?auto=format&fit=crop&w=500&q=80' },
+                { id: 20, name: 'Mango Lassi', price: 89, img: 'https://images.unsplash.com/photo-1553530666-ba953a5ad488?auto=format&fit=crop&w=500&q=80' }
+            ],
+            'sushi-dreams': [
+                { id: 21, name: 'California Roll', price: 399, img: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4fcb?auto=format&fit=crop&w=500&q=80' },
+                { id: 22, name: 'Salmon Sushi', price: 449, img: 'https://images.unsplash.com/photo-1564489551878-2f400e90a340?auto=format&fit=crop&w=500&q=80' },
+                { id: 23, name: 'Spicy Tuna Roll', price: 429, img: 'https://images.unsplash.com/photo-1553621042-f6e147245192?auto=format&fit=crop&w=500&q=80' },
+                { id: 24, name: 'Ramen Bowl', price: 349, img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80' },
+                { id: 25, name: 'Edamame', price: 99, img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80' }
+            ],
+            'taco-fiesta': [
+                { id: 26, name: 'Crispy Beef Tacos', price: 249, img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80' },
+                { id: 27, name: 'Grilled Chicken Tacos', price: 279, img: 'https://images.unsplash.com/photo-1599974579688-403dbee803b0?auto=format&fit=crop&w=500&q=80' },
+                { id: 28, name: 'Fish Tacos Supreme', price: 299, img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80' },
+                { id: 29, name: 'Loaded Nachos', price: 199, img: 'https://images.unsplash.com/photo-1599599810694-c7fb27de0b4a?auto=format&fit=crop&w=500&q=80' },
+                { id: 30, name: 'Churros with Chocolate', price: 149, img: 'https://images.unsplash.com/photo-1488477181946-6428a0291840?auto=format&fit=crop&w=500&q=80' }
+            ],
+            'grilled-perfection': [
+                { id: 31, name: 'Prime Ribeye Steak', price: 699, img: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=500&q=80' },
+                { id: 32, name: 'Grilled Salmon Fillet', price: 549, img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80' },
+                { id: 33, name: 'BBQ Ribs Platter', price: 599, img: 'https://images.unsplash.com/photo-1555939594-58d7cb561a1a?auto=format&fit=crop&w=500&q=80' },
+                { id: 34, name: 'Grilled Chicken Breast', price: 349, img: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=500&q=80' },
+                { id: 35, name: 'Grilled Vegetables Mix', price: 199, img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=500&q=80' }
+            ]
+        };
+
+        // Update Account Button
+        function updateAccountButton() {
+            const accountText = document.getElementById('account-text');
+            accountText.textContent = user ? user.name.split(' ')[0] : 'Sign In';
+        }
+
+        // Page Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function goBackToHome() { showPage('main-page'); }
+        function goToCart() { showPage('cart-page'); updateCartDisplay(); }
+        function goToCheckout() { showPage('checkout-page'); updateCheckoutSummary(); }
+
+        // Account Button Handler
+        document.getElementById('account-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (user) {
+                document.getElementById('profile-name').textContent = user.name;
+                document.getElementById('profile-email').textContent = user.email;
+                const initials = user.name.split(' ').map(n => n[0]).join('');
+                document.getElementById('profile-initials').textContent = initials;
+                showPage('profile-page');
+            } else {
+                showPage('signin-page');
+            }
+        });
+
+        // Cart Icon Handler
+        document.getElementById('cart-icon-btn').addEventListener('click', goToCart);
+
+        // Sign In Form
+        document.getElementById('signin-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+            const name = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
+            user = { name, email };
+            localStorage.setItem('quickbite_user', JSON.stringify(user));
+            updateAccountButton();
+            alert('Signed in successfully!');
+            showPage('main-page');
+            document.getElementById('signin-form').reset();
+        });
+
+        function logout() {
+            user = null;
+            localStorage.removeItem('quickbite_user');
+            cart = [];
+            localStorage.removeItem('quickbite_cart');
+            updateAccountButton();
+            updateCartBadge();
+            showPage('main-page');
+        }
+
+        // View Restaurant Menu
+        window.viewRestaurant = function(restaurantId) {
+            const items = menuData[restaurantId];
+            let html = `<div class="restaurant-view"><div class="restaurant-view-header"><i class="ph ph-arrow-left" onclick="goBackToHome()" style="cursor: pointer; font-size: 1.5rem;"></i><h2>${restaurantId.replace('-', ' ').toUpperCase()}</h2></div><div class="menu-grid">`;
+            
+            items.forEach(item => {
+                html += `<div class="menu-item-card"><img class="menu-item-img" src="${item.img}" alt="${item.name}" onerror="this.onerror=null;this.src='images/fallback.svg'"><div class="menu-item-body"><h4>${item.name}</h4><p class="price">₹${item.price}</p><button onclick="addToCartById(${item.id})">Add</button></div></div>`;
+            });
+            
+            html += `</div></div>`;
+            
+            const existing = document.querySelector('.restaurant-menu-view');
+            if (existing) existing.remove();
+            
+            const pageView = document.createElement('div');
+            pageView.className = 'page-view restaurant-menu-view active';
+            pageView.innerHTML = html;
+            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+            document.body.appendChild(pageView);
+        };
+
+        // Add to Cart
+        window.addToCart = function(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ id, name, price, qty: 1 });
+            }
+            localStorage.setItem('quickbite_cart', JSON.stringify(cart));
+            updateCartBadge();
+            // Non-blocking toast instead of alert
+            const toast = document.createElement('div');
+            toast.className = 'quickbite-toast';
+            toast.textContent = `${name} added to cart!`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.classList.add('visible'), 50);
+            setTimeout(() => { toast.classList.remove('visible'); setTimeout(()=>toast.remove(),300); }, 2000);
+        };
+
+        // Add to cart by item id (looks up menuData safely)
+        window.addToCartById = function(id) {
+            for (const key in menuData) {
+                const it = menuData[key].find(i => i.id === id);
+                if (it) { window.addToCart(it.id, it.name, it.price); return; }
+            }
+        };
+
+        // Update Cart Badge
+        function updateCartBadge() {
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-badge').textContent = totalItems;
+        }
+
+        // Update Cart Display
+        function updateCartDisplay() {
+            const emptyCart = document.getElementById('empty-cart');
+            const cartItems = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            
+            if (cart.length === 0) {
+                emptyCart.style.display = 'flex';
+                cartItems.style.display = 'none';
+                cartSummary.style.display = 'none';
+            } else {
+                emptyCart.style.display = 'none';
+                cartItems.style.display = 'block';
+                cartSummary.style.display = 'block';
+                
+                let html = '';
+                let subtotal = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.qty;
+                    subtotal += itemTotal;
+                    html += `<div class="cart-item"><div class="item-info"><h4>${item.name}</h4><p>₹${item.price} each</p></div><div class="item-qty"><button onclick="decreaseQty(${item.id})">-</button><span>${item.qty}</span><button onclick="increaseQty(${item.id})">+</button></div><div class="item-total"><p>₹${itemTotal}</p><button onclick="removeFromCart(${item.id})" class="remove-btn"><i class="ph ph-trash"></i></button></div></div>`;
+                });
+                
+                cartItems.innerHTML = html;
+                
+                const deliveryFee = 50;
+                const discount = 0;
+                const total = subtotal + deliveryFee - discount;
+                
+                document.getElementById('subtotal').textContent = '₹' + subtotal;
+                document.getElementById('delivery-fee').textContent = '₹' + deliveryFee;
+                document.getElementById('discount').textContent = '₹' + discount;
+                document.getElementById('total').textContent = '₹' + total;
+            }
+        }
+
+        window.increaseQty = function(id) {
+            const item = cart.find(i => i.id === id);
+            if (item) item.qty++;
+            localStorage.setItem('quickbite_cart', JSON.stringify(cart));
+            updateCartBadge();
+            updateCartDisplay();
+        };
+
+        window.decreaseQty = function(id) {
+            const item = cart.find(i => i.id === id);
+            if (item && item.qty > 1) item.qty--;
+            localStorage.setItem('quickbite_cart', JSON.stringify(cart));
+            updateCartBadge();
+            updateCartDisplay();
+        };
+
+        window.removeFromCart = function(id) {
+            cart = cart.filter(item => item.id !== id);
+            localStorage.setItem('quickbite_cart', JSON.stringify(cart));
+            updateCartBadge();
+            updateCartDisplay();
+        };
+
+        // Checkout Summary
+        function updateCheckoutSummary() {
+            let html = '';
+            cart.forEach(item => {
+                html += `<div class="summary-item"><span>${item.name} x ${item.qty}</span><span>₹${item.price * item.qty}</span></div>`;
+            });
+            document.getElementById('checkout-summary').innerHTML = html;
+        }
+
+        // Apply Promo
+        window.applyPromo = function() {
+            const code = document.getElementById('promo-code').value.toUpperCase();
+            if (code === 'SAVE20') {
+                alert('Promo code applied! 20% off on your order');
+            } else {
+                alert('Invalid promo code. Try SAVE20');
+            }
+        };
+
+        // Place Order
+        window.placeOrder = function() {
+            const name = document.getElementById('customer-name').value;
+            const phone = document.getElementById('customer-phone').value;
+            const address = document.getElementById('customer-address').value;
+            
+            if (!name || !phone || !address) {
+                alert('Please fill all required fields');
+                return;
+            }
+            
+            const orderId = Math.floor(Math.random() * 900000) + 100000;
+            document.getElementById('order-id').textContent = `Order ID: #${orderId}`;
+            
+            cart = [];
+            localStorage.removeItem('quickbite_cart');
+            updateCartBadge();
+            
+            showPage('success-page');
+        };
+
+        // Initialize
+        updateAccountButton();
+        updateCartBadge();
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Validate and fix broken menu images at load
+        function validateAndFixImages() {
+            const fallback = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80';
+            const urls = new Set();
+
+            // collect from menuData
+            for (const key in menuData) {
+                menuData[key].forEach(item => { if (item && item.img) urls.add(item.img); });
+            }
+
+            // collect from card-img background styles
+            document.querySelectorAll('.card-img').forEach(div => {
+                const bg = div.style.backgroundImage || window.getComputedStyle(div).backgroundImage;
+                const m = bg && bg.match(/url\(["']?(.*?)["']?\)/);
+                if (m && m[1]) urls.add(m[1]);
+            });
+
+            // check each URL
+            urls.forEach(url => {
+                try {
+                    const img = new Image();
+                    img.onload = () => { /* ok */ };
+                    img.onerror = () => {
+                        // replace any <img> elements
+                        document.querySelectorAll(`img[src="${url}"]`).forEach(el => el.src = fallback);
+                        // replace background images on .card-img
+                        document.querySelectorAll('.card-img').forEach(div => {
+                            const bg = div.style.backgroundImage || window.getComputedStyle(div).backgroundImage;
+                            if (bg && bg.indexOf(url) !== -1) div.style.backgroundImage = `url('${fallback}')`;
+                        });
+                        // update menuData so future views use fallback
+                        for (const k in menuData) {
+                            menuData[k].forEach(item => { if (item.img === url) item.img = fallback; });
+                        }
+                    };
+                    img.src = url;
+                } catch (e) { /* ignore */ }
+            });
+
+            // ensure menu images have onerror fallback
+            document.querySelectorAll('img.menu-item-img').forEach(im => {
+                if (!im.getAttribute('onerror')) im.setAttribute('onerror', `this.onerror=null;this.src='${fallback}'`);
+            });
+        }
+
+        // Run validation after page load so network checks can run
+        if (document.readyState === 'complete') validateAndFixImages(); else window.addEventListener('load', validateAndFixImages);
+
+        // Footer Navigation
+        function navigateToFooter(section) {
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+    <!-- About Us Page -->
+    <div id="about-page" class="page-view">
+        <div class="container" style="max-width: 900px; margin-top: 40px; padding: 40px 20px;">
+            <h1 style="color: #ff4757; margin-bottom: 30px; text-align: center;">About QuickBite</h1>
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <h2 style="color: #2f3542; margin-bottom: 15px;">Who We Are</h2>
+                <p style="line-height: 1.8; color: #57606f; margin-bottom: 20px;">QuickBite is your ultimate food delivery partner, committed to bringing delicious meals from your favorite restaurants straight to your doorstep. Established in 2025, we've been serving food lovers with speed, quality, and reliability.</p>
+                
+                <h2 style="color: #2f3542; margin-bottom: 15px; margin-top: 30px;">Our Mission</h2>
+                <p style="line-height: 1.8; color: #57606f; margin-bottom: 20px;">We aim to connect hungry customers with amazing restaurants in their locality, ensuring fast delivery and exceptional service every single time.</p>
+                
+                <h2 style="color: #2f3542; margin-bottom: 15px; margin-top: 30px;">Why Choose Us?</h2>
+                <ul style="color: #57606f; line-height: 1.8; margin-bottom: 20px;">
+                    <li>✓ 30-minute delivery guarantee</li>
+                    <li>✓ Wide variety of cuisines</li>
+                    <li>✓ Trusted restaurants and authentic food</li>
+                    <li>✓ Real-time order tracking</li>
+                    <li>✓ Secure payment options</li>
+                    <li>✓ 24/7 customer support</li>
+                </ul>
+
+                <button onclick="navigateToMain()" style="background: #ff4757; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 20px;">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div id="contact-page" class="page-view">
+        <div class="container" style="max-width: 900px; margin-top: 40px; padding: 40px 20px;">
+            <h1 style="color: #ff4757; margin-bottom: 30px; text-align: center;">Contact Us</h1>
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <div>
+                        <h3 style="color: #ff4757; margin-bottom: 10px;">📞 Phone</h3>
+                        <p style="color: #57606f;">+91-1800-QUICKBITE (1800-7842524)</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #ff4757; margin-bottom: 10px;">📧 Email</h3>
+                        <p style="color: #57606f;">support@quickbite.com</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #ff4757; margin-bottom: 10px;">📍 Address</h3>
+                    <p style="color: #57606f;">QuickBite Headquarters<br>Food Hub Tower, Sector 12<br>Tech City, 201301</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #ff4757; margin-bottom: 10px;">🕐 Business Hours</h3>
+                    <p style="color: #57606f;">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday - Sunday: 10:00 AM - 5:00 PM</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #ff4757; margin-bottom: 15px;">Follow Us</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="width: 40px; height: 40px; background: #ff4757; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">f</a>
+                        <a href="#" style="width: 40px; height: 40px; background: #ff4757; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">🐦</a>
+                        <a href="#" style="width: 40px; height: 40px; background: #ff4757; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">📷</a>
+                    </div>
+                </div>
+
+                <button onclick="navigateToMain()" style="background: #ff4757; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px;">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Page -->
+    <div id="faq-page" class="page-view">
+        <div class="container" style="max-width: 900px; margin-top: 40px; padding: 40px 20px;">
+            <h1 style="color: #ff4757; margin-bottom: 30px; text-align: center;">Frequently Asked Questions</h1>
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #ff4757; cursor: pointer;" onclick="toggleFAQ(this)">❓ How long does delivery take?</h3>
+                    <p style="color: #57606f; display: none; margin-top: 10px;">We guarantee delivery within 30 minutes of order placement. In peak hours, it may take up to 45 minutes.</p>
+                </div>
+                <hr>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #ff4757; cursor: pointer;" onclick="toggleFAQ(this)">❓ What payment methods do you accept?</h3>
+                    <p style="color: #57606f; display: none; margin-top: 10px;">We accept all major credit/debit cards, UPI, digital wallets, and cash on delivery options.</p>
+                </div>
+                <hr>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #ff4757; cursor: pointer;" onclick="toggleFAQ(this)">❓ Can I modify my order after placing it?</h3>
+                    <p style="color: #57606f; display: none; margin-top: 10px;">You can modify orders within 5 minutes of placement. After that, please contact support to cancel and reorder.</p>
+                </div>
+                <hr>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #ff4757; cursor: pointer;" onclick="toggleFAQ(this)">❓ What if my food arrives cold or incorrect?</h3>
+                    <p style="color: #57606f; display: none; margin-top: 10px;">We offer 100% refund or replacement. Contact our support team immediately with photos for quick resolution.</p>
+                </div>
+                <hr>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #ff4757; cursor: pointer;" onclick="toggleFAQ(this)">❓ Do you have a loyalty program?</h3>
+                    <p style="color: #57606f; display: none; margin-top: 10px;">Yes! Use promo code SAVE20 for 20% off on your first order, and earn points with every purchase.</p>
+                </div>
+
+                <button onclick="navigateToMain()" style="background: #ff4757; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 20px;">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #2f3542; color: white; padding: 40px 20px; margin-top: 60px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <div>
+                    <h3 style="color: #ff4757; margin-bottom: 15px;">QuickBite</h3>
+                    <p style="color: #b2bec3; line-height: 1.6;">Fast, reliable food delivery service connecting you with your favorite restaurants. Order now and enjoy delicious meals at your doorstep!</p>
+                </div>
+                <div>
+                    <h3 style="color: #ff4757; margin-bottom: 15px;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" onclick="navigateToFooter('about-page')" style="color: #b2bec3; text-decoration: none;">About Us</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" onclick="navigateToFooter('contact-page')" style="color: #b2bec3; text-decoration: none;">Contact Us</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" onclick="navigateToFooter('faq-page')" style="color: #b2bec3; text-decoration: none;">FAQs</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" onclick="navigateToMain()" style="color: #b2bec3; text-decoration: none;">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #ff4757; margin-bottom: 15px;">Policies</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #b2bec3; text-decoration: none;">Privacy Policy</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #b2bec3; text-decoration: none;">Terms of Service</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #b2bec3; text-decoration: none;">Refund Policy</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #b2bec3; text-decoration: none;">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #ff4757; margin-bottom: 15px;">Payment Methods</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px; color: #b2bec3;">💳 Credit Cards</li>
+                        <li style="margin-bottom: 8px; color: #b2bec3;">💵 Debit Cards</li>
+                        <li style="margin-bottom: 8px; color: #b2bec3;">📱 UPI</li>
+                        <li style="margin-bottom: 8px; color: #b2bec3;">💸 Cash on Delivery</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border: none; border-top: 1px solid #636e72; margin-bottom: 20px;">
+            <div style="text-align: center; color: #b2bec3;">
+                <p>&copy; 2025 QuickBite. All rights reserved. | Made with ❤️ for food lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle FAQ answers
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            if (answer && answer.tagName !== 'HR') {
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            }
+        }
     </script>
 </body>
 </html>
